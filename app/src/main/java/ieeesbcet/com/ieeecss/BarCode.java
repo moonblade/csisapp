@@ -40,8 +40,8 @@ public class BarCode extends AppCompatActivity {
 
     JSONParser jsonParser = new JSONParser();
 
-        // url to create new product 100.84.249.115
-    private static String url_create_product = "http://192.168.1.6/csis/insert.php";
+        // url to create new product 100.84.249.115   192.168.1.6
+    private static String url_create_product = "http://10.42.0.1/csis/insert.php";
 
     // JSON Node names
     private static final String TAG_SUCCESS = "success";
@@ -242,8 +242,8 @@ public class BarCode extends AppCompatActivity {
             JSONObject json = jsonParser.makeHttpRequest(url_create_product,
                     "POST", params);
 
-            if(json==null)
-                return null;
+//            if(json==null)
+//                return null;
 
             // check log cat fro response
             Log.d("Create Response", json.toString());
@@ -258,7 +258,7 @@ public class BarCode extends AppCompatActivity {
     //                startActivity(i);
 
                     // closing this screen
-                    finish();
+//                    finish();
                 } else {
                     // failed to create product
                 }
@@ -275,6 +275,7 @@ public class BarCode extends AppCompatActivity {
         protected void onPostExecute(String file_url) {
             // dismiss the dialog once done
             pDialog.dismiss();
+
         }
 
     }
