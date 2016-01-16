@@ -34,7 +34,7 @@ import java.util.List;
 public class BarCode extends AppCompatActivity {
 
 
-    String msg;
+    String msg, res;
     // Progress Dialog
     private ProgressDialog pDialog;
 
@@ -187,7 +187,7 @@ public class BarCode extends AppCompatActivity {
 
         new AlertDialog.Builder(this)
                 .setTitle(getResources().getString(R.string.app_name))
-                .setCancelable(false)
+                .setCancelable(true)
                 .setMessage(message)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
@@ -196,10 +196,33 @@ public class BarCode extends AppCompatActivity {
 
                     }
                 })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which){
+                        dialog.cancel();
+                    }
+                })
 
                 .show();
     }
 
+    private void showResponseAlertDialog(String message) {
+
+//        msg = message;
+//        System.out.println(msg);
+
+        new AlertDialog.Builder(this)
+                .setTitle(getResources().getString(R.string.app_name))
+                .setCancelable(false)
+                .setMessage(message)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        dialog.cancel();
+                    }
+                })
+
+                .show();
+    }
 
 
     /**
@@ -214,14 +237,14 @@ public class BarCode extends AppCompatActivity {
         protected void onPreExecute() {
             super.onPreExecute();
             pDialog = new ProgressDialog(BarCode.this); //my insert
-            pDialog.setMessage("Creating Product..");
+            pDialog.setMessage("Marking Attendance..");
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(true);
             pDialog.show();
         }
 
         /**
-         * Creating product
+         * Marking Attendance
          * */
         protected String doInBackground(String... args) {
 //            String name = inputName.getText().toString();
@@ -235,7 +258,6 @@ public class BarCode extends AppCompatActivity {
 //            params.add(new BasicNameValuePair("description", description));
        params.add(new BasicNameValuePair("msg", msg));
 
-            System.out.println("wefsf");
 
             // getting JSON Object
             // Note that create product url accepts POST method
@@ -251,17 +273,9 @@ public class BarCode extends AppCompatActivity {
             // check for success tag
             try {
              int success = json.getInt(TAG_SUCCESS);
+                res = json.getString("message");
 
-                if (success == 1) {
-                    // successfully created product
-    //                Intent i = new Intent(getApplicationContext(), AllProductsActivity.class);
-    //                startActivity(i);
 
-                    // closing this screen
-//                    finish();
-                } else {
-                    // failed to create product
-                }
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -275,6 +289,7 @@ public class BarCode extends AppCompatActivity {
         protected void onPostExecute(String file_url) {
             // dismiss the dialog once done
             pDialog.dismiss();
+            showResponseAlertDialog(res);
 
         }
 
