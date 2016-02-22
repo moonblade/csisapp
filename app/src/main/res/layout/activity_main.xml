@@ -13,4 +13,21 @@
         android:id="@+id/button"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set Url"
+        android:id="@+id/urlbtn"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/serverurl"
+        android:layout_above="@+id/urlbtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="37dp" />
+
 </RelativeLayout>

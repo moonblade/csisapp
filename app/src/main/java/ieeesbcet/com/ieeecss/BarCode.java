@@ -27,21 +27,26 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.Console;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
+import java.util.*;
 
 
 public class BarCode extends AppCompatActivity {
 
-
+    static String urlip;
     String msg, res;
     // Progress Dialog
     private ProgressDialog pDialog;
 
     JSONParser jsonParser = new JSONParser();
 
-        // url to create new product 100.84.249.115   192.168.1.6
-    private static String url_create_product = "http://10.42.0.1/csis/insert.php";
+        // url to create new product 100.84.249.115   192.168.1.6   10.42.0.1   192.168.0.102
+    private static String url_create_product;// = urlip; //"http://" + urlip + "/csis/aura/insert.php";
+
+
 
     // JSON Node names
     private static final String TAG_SUCCESS = "success";
@@ -61,6 +66,13 @@ public class BarCode extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Intent i = getIntent();
+        urlip = i.getExtras().getString("urlip");
+
+        System.out.print("on receiving it is::::::::" + urlip);
+        url_create_product = urlip;
+
         setContentView(R.layout.barcodescanner);
 
         initControls();
@@ -157,7 +169,7 @@ public class BarCode extends AppCompatActivity {
                             "<<<<Bar Code>>> " + sym.getData());
                     String scanResult = sym.getData().trim();
 
-//                    System.out.println(scanResult);
+                    System.out.println("url is ::::::::::::::::::" + url_create_product);
 
                     showAlertDialog(scanResult);
 
@@ -290,6 +302,7 @@ public class BarCode extends AppCompatActivity {
             // dismiss the dialog once done
             pDialog.dismiss();
             showResponseAlertDialog(res);
+            res="";
 
         }
 
