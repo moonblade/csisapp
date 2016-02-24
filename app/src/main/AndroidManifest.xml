@@ -18,7 +18,7 @@
 
         <meta-data
             android:name="DATABASE"
-            android:value="myattendance.db" />
+            android:value="myatt.db" />
 
 
         <activity android:name=".MainActivity" >

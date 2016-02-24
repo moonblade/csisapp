@@ -20,7 +20,7 @@
         android:theme="@style/AppTheme" >
         <meta-data
             android:name="DATABASE"
-            android:value="myattendance.db" />
+            android:value="myatt.db" />
 
         <activity android:name="ieeesbcet.com.ieeecss.MainActivity" >
             <intent-filter>

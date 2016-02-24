@@ -10,6 +10,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.orm.SugarContext;
+import com.orm.SugarRecord;
+import com.orm.util.SugarConfig;
+
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
@@ -37,6 +41,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button button= (Button) findViewById(R.id.button);
+        SugarContext.init(this);
+        Attendance attendance = new Attendance("sddd");
+        try {
+            attendance.save();
+        }catch (ExceptionInInitializerError e){
+            e.printStackTrace();
+        }
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,10 +69,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 new DownSync().execute();
-
-
-
-
 
 
             }
@@ -165,8 +172,9 @@ public class MainActivity extends AppCompatActivity {
                     Date sqlDate = java.sql.Date.valueOf(lastupdate);
                     int a = Integer.parseInt(attendance);
 
-                    Attendance db = new Attendance("nasfg"); //, email, ph, branch, id, food, a, sqlDate
-                    db.save();
+                    final Attendance db = new Attendance(name); //, email, ph, branch, id, food, a, sqlDate
+                    Log.i("attendance", db.toString());
+                   db.save();
 
 
 

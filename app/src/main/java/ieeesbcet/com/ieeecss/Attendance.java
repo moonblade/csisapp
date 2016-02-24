@@ -5,19 +5,10 @@ package ieeesbcet.com.ieeecss;
  */
 import com.orm.SugarRecord;
 
-import java.math.BigInteger;
-import java.sql.Date;
 
 public class Attendance extends SugarRecord {
 
-    String Name;
-//    String Email;
-//    BigInteger Phone;
-//    String Branch;
-//    int MemId;
-//    String Food;
-//    int Attendance;
-//    Date LastUpdate;
+    String name;
 
     public Attendance(){
 
@@ -25,7 +16,7 @@ public class Attendance extends SugarRecord {
 
     public Attendance(String Name) //, String Email, BigInteger Phone, String Branch, int MemId, String Food, int Attendance,Date LastUpdate
     {
-        this.Name = Name;
+        this.name = Name;
 //        this.Email = Email;
 //        this.Phone = Phone;
 //        this.Branch = Branch;
@@ -33,6 +24,10 @@ public class Attendance extends SugarRecord {
 //        this.Food = Food;
 //        this.Attendance = Attendance;
 //        this.LastUpdate = LastUpdate;
+    }
+
+    public String toString(){
+        return name;
     }
 
 }
