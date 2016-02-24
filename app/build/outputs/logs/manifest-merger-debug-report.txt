@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml:2:1-28:12
+ADDED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml:2:1-37:12
 	xmlns:android
 		ADDED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml:2:11-69
 	package
@@ -28,6 +28,8 @@ MERGED from [com.android.support:support-v4:23.1.0] /home/sajin/Downloads/CSIS/I
 MERGED from [me.dm7.barcodescanner:zbar:1.8.2] /home/sajin/Downloads/CSIS/IEEECSS/app/build/intermediates/exploded-aar/me.dm7.barcodescanner/zbar/1.8.2/AndroidManifest.xml:7:5-9:41
 MERGED from [me.dm7.barcodescanner:core:1.8.2] /home/sajin/Downloads/CSIS/IEEECSS/app/build/intermediates/exploded-aar/me.dm7.barcodescanner/core/1.8.2/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:support-v4:23.1.0] /home/sajin/Downloads/CSIS/IEEECSS/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/AndroidManifest.xml:20:5-43
+MERGED from [com.github.satyan:sugar:1.4] /home/sajin/Downloads/CSIS/IEEECSS/app/build/intermediates/exploded-aar/com.github.satyan/sugar/1.4/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:support-v4:23.1.0] /home/sajin/Downloads/CSIS/IEEECSS/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/AndroidManifest.xml:20:5-43
 	android:targetSdkVersion
 		INJECTED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml
 		INJECTED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml
@@ -36,39 +38,48 @@ MERGED from [com.android.support:support-v4:23.1.0] /home/sajin/Downloads/CSIS/I
 		INJECTED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml
 		INJECTED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml
 application
-ADDED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml:10:5-26:19
+ADDED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml:10:5-35:19
 MERGED from [com.android.support:appcompat-v7:23.1.0] /home/sajin/Downloads/CSIS/IEEECSS/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.1.0] /home/sajin/Downloads/CSIS/IEEECSS/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/AndroidManifest.xml:22:5-20
 MERGED from [me.dm7.barcodescanner:zbar:1.8.2] /home/sajin/Downloads/CSIS/IEEECSS/app/build/intermediates/exploded-aar/me.dm7.barcodescanner/zbar/1.8.2/AndroidManifest.xml:11:5-20
 MERGED from [me.dm7.barcodescanner:core:1.8.2] /home/sajin/Downloads/CSIS/IEEECSS/app/build/intermediates/exploded-aar/me.dm7.barcodescanner/core/1.8.2/AndroidManifest.xml:11:5-20
 MERGED from [com.android.support:support-v4:23.1.0] /home/sajin/Downloads/CSIS/IEEECSS/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.1.0] /home/sajin/Downloads/CSIS/IEEECSS/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/AndroidManifest.xml:22:5-20
 	android:supportsRtl
-		ADDED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml:14:9-35
+		ADDED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml:16:9-35
 	android:label
-		ADDED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml:13:9-41
+		ADDED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml:15:9-41
 	android:allowBackup
-		ADDED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml:11:9-35
+		ADDED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml:13:9-35
 	android:icon
-		ADDED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml:12:9-43
+		ADDED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml:14:9-43
 	android:theme
-		ADDED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml:15:9-40
+		ADDED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml:17:9-40
+	android:name
+		ADDED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml:11:9-40
+meta-data#DATABASE
+ADDED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml:20:9-22:47
+	android:name
+		ADDED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml:21:13-36
+	android:value
+		ADDED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml:22:13-44
 activity#ieeesbcet.com.ieeecss.MainActivity
-ADDED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml:16:9-22:20
+ADDED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml:25:9-31:20
 	android:name
-		ADDED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml:16:19-47
+		ADDED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml:25:19-47
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml:17:13-21:29
+ADDED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml:26:13-30:29
 action#android.intent.action.MAIN
-ADDED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml:18:17-69
+ADDED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml:27:17-69
 	android:name
-		ADDED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml:18:25-66
+		ADDED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml:27:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml:20:17-77
+ADDED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml:29:17-77
 	android:name
-		ADDED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml:20:27-74
+		ADDED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml:29:27-74
 activity#ieeesbcet.com.ieeecss.BarCode
-ADDED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml:23:9-25:48
+ADDED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml:32:9-34:48
 	android:label
-		ADDED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml:25:13-45
+		ADDED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml:34:13-45
 	android:name
-		ADDED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml:24:13-36
+		ADDED from /home/sajin/Downloads/CSIS/IEEECSS/app/src/main/AndroidManifest.xml:33:13-36

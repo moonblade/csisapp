@@ -11,8 +11,10 @@
         android:layout_height="wrap_content"
         android:text="Scanner"
         android:id="@+id/button"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/urlbtn"
+        android:layout_alignStart="@+id/urlbtn"
+        android:layout_marginTop="110dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -29,5 +31,24 @@
         android:layout_above="@+id/urlbtn"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="37dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="UpSync"
+        android:id="@+id/upsync"
+        android:layout_above="@+id/serverurl"
+        android:layout_toLeftOf="@+id/button"
+        android:layout_toStartOf="@+id/button"
+        android:layout_marginBottom="48dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DownSync"
+        android:id="@+id/downsync"
+        android:layout_alignBottom="@+id/upsync"
+        android:layout_toRightOf="@+id/button"
+        android:layout_toEndOf="@+id/button" />
 
 </RelativeLayout>

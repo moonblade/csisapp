@@ -22,6 +22,7 @@ package ieeesbcet.com.ieeecss;
         import org.apache.http.client.methods.HttpPost;
         import org.apache.http.client.utils.URLEncodedUtils;
         import org.apache.http.impl.client.DefaultHttpClient;
+        import org.json.JSONArray;
         import org.json.JSONException;
         import org.json.JSONObject;
 
@@ -106,12 +107,36 @@ public class JSONParser {
             Log.e("Buffer Error", "Error converting result " + e.toString());
         }
 
+        System.out.println(json);
         // try parse the string to a JSON object
         try {
             jObj = new JSONObject(json);
         } catch (JSONException e) {
             Log.e("JSON Parser", "Error parsing data " + e.toString());
         }
+
+//        JSONArray p;
+//        try {
+//            p = new JSONArray(json);
+//
+//            for (int i = 0; i < p.length(); i++) {
+//
+////                System.out.println(p.get(0) + "......" + p.get(1));
+//
+//                JSONObject jsonobject = p.getJSONObject(i);
+//                String named = jsonobject.getString("Name");
+//                String urlk = jsonobject.getString("Email");
+//
+//
+//                System.out.println(named + "..." + urlk);
+//            }
+//
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//            System.out.println("NOT WORKING HERE");
+//        }
+
+
 
         // return JSON String
         return jObj;
