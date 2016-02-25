@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         Attendance attendance = new Attendance("sddd");
         try {
             attendance.save();
-        }catch (IncompatibleClassChangeError e){
+        }catch (ExceptionInInitializerError e){
             e.printStackTrace();
         }
         button.setOnClickListener(new View.OnClickListener() {
@@ -222,17 +222,17 @@ public class MainActivity extends AppCompatActivity {
             System.out.println("DATE is " + formattedDate);
 
 
-//            List<Attendance> AttendenceList = Attendance.find(Attendance.class, "LastUpdate = ?", formattedDate);
+            List<Attendance> AttendenceList = Attendance.find(Attendance.class, "LastUpdate = ?", formattedDate);
 //            long numberOfEntries = Attendance.count(Attendance.class, "LastUpdate = ?", new String[]{formattedDate});
-//
-//            for (int i=0;i<AttendenceList.size();i++){
-//
-//                Attendance a = AttendenceList.get(i);
-//                String msg = a.MemId;
-//                param.clear();
-//                param.add(new BasicNameValuePair("msg", msg));
-//                dbResponse = jsonParser.makeHttpRequest(urlup, "POST", param);
-//            }
+
+            for (int i=0;i<AttendenceList.size();i++){
+
+                Attendance a = AttendenceList.get(i);
+                String msg = a.MemId;
+                param.clear();
+                param.add(new BasicNameValuePair("msg", msg));
+                dbResponse = jsonParser.makeHttpRequest(urlup, "POST", param);
+            }
 
 
 
