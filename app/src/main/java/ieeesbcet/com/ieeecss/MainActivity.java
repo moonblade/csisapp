@@ -2,8 +2,8 @@ package ieeesbcet.com.ieeecss;
 
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -11,8 +11,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.orm.SugarContext;
-import com.orm.SugarRecord;
-import com.orm.util.SugarConfig;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -22,7 +20,9 @@ import org.json.JSONObject;
 
 import java.math.BigInteger;
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 //import android.widget.TextView;
 
@@ -30,11 +30,15 @@ public class MainActivity extends AppCompatActivity {
 
 //    Attendance db;
     JSONArray dbArray;
+    JSONObject dbResponse;
     public String urlip;
     JSONParser jsonParser = new JSONParser();
     JSONArrayParser jsonArrayParser = new JSONArrayParser();
-    String urldb = "http://10.42.0.1/csis/aura/downsync.php";
+    String urldb = "http://192.168.1.3/csis/aura/downsync.php";
+    String urlup = "http://192.168.1.3/csis/aura/upsync.php";
+
     String res;
+    Attendance db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         Attendance attendance = new Attendance("sddd");
         try {
             attendance.save();
-        }catch (ExceptionInInitializerError e){
+        }catch (IncompatibleClassChangeError e){
             e.printStackTrace();
         }
         button.setOnClickListener(new View.OnClickListener() {
@@ -73,6 +77,19 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
+        Button up = (Button) findViewById(R.id.upsync);
+        up.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                new UpSync().execute();
+
+
+            }
+        });
+
 
         final EditText et = (EditText) findViewById(R.id.serverurl);
         Button btnurl= (Button) findViewById(R.id.urlbtn);
@@ -172,12 +189,10 @@ public class MainActivity extends AppCompatActivity {
                     Date sqlDate = java.sql.Date.valueOf(lastupdate);
                     int a = Integer.parseInt(attendance);
 
-                    final Attendance db = new Attendance(name); //, email, ph, branch, id, food, a, sqlDate
+
+                    db = new Attendance(name); //, email, ph, branch, id, food, a, sqlDate
                     Log.i("attendance", db.toString());
-                   db.save();
-
-
-
+                    db.save();
 
 //                    System.out.println("Attendance is :::::::: " + a * 2);
 //                    Log.d("CREATE RESPONSE " + i , jsonobject.toString());
@@ -185,10 +200,84 @@ public class MainActivity extends AppCompatActivity {
 
             }catch(JSONException e){
                 e.printStackTrace();
-
             }
 
 
         }
+
+
+    }
+
+    class UpSync extends AsyncTask<String, String, String>{
+        @Override
+        protected String doInBackground(String... params) {
+
+            List<NameValuePair> param = new ArrayList<NameValuePair>();
+
+            Calendar c = Calendar.getInstance();
+            System.out.println("Current time =&gt; "+c.getTime());
+            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+            String formattedDate = df.format(c.getTime());
+            // Now formattedDate have current date/time
+            System.out.println("DATE is " + formattedDate);
+
+
+//            List<Attendance> AttendenceList = Attendance.find(Attendance.class, "LastUpdate = ?", formattedDate);
+//            long numberOfEntries = Attendance.count(Attendance.class, "LastUpdate = ?", new String[]{formattedDate});
+//
+//            for (int i=0;i<AttendenceList.size();i++){
+//
+//                Attendance a = AttendenceList.get(i);
+//                String msg = a.MemId;
+//                param.clear();
+//                param.add(new BasicNameValuePair("msg", msg));
+//                dbResponse = jsonParser.makeHttpRequest(urlup, "POST", param);
+//            }
+
+
+
+
+            //            params.add(new BasicNameValuePair("name", name));
+//            params.add(new BasicNameValuePair("price", price));
+//            params.add(new BasicNameValuePair("description", description));
+
+
+
+
+//            List<Attendance> dbdata = Attendance.listAll(Attendance.class);
+//
+//            int i =0;
+//            while (i!= dbdata.size())
+//            {
+//                System.out.println(dbdata.get(i).Name + "---"+ dbdata.get(i).MemId + "---" +  dbdata.get(i).Attendance );
+//                i++;
+//            }
+
+
+
+
+
+//            if(json==null)
+//                return null;
+
+            // check log cat fro response
+//            Log.d("Create Response", json.toString());
+
+            // check for success tag
+//                try {
+//                    int success = json.getInt("success");
+//                    res = json.getString("message");
+//
+//
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
+
+
+
+
+            return null;
+        }
+
     }
 }

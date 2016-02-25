@@ -26,8 +26,6 @@ dependencies {
     compile 'me.dm7.barcodescanner:zbar:1.8.2'
 
     compile 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
-
-
     compile 'com.github.satyan:sugar:1.4'
 
 }

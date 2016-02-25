@@ -9,6 +9,7 @@ import com.orm.SugarRecord;
 public class Attendance extends SugarRecord {
 
     String name;
+    String MemId;
 
     public Attendance(){
 
@@ -17,6 +18,7 @@ public class Attendance extends SugarRecord {
     public Attendance(String Name) //, String Email, BigInteger Phone, String Branch, int MemId, String Food, int Attendance,Date LastUpdate
     {
         this.name = Name;
+        this.MemId = "21";
 //        this.Email = Email;
 //        this.Phone = Phone;
 //        this.Branch = Branch;
