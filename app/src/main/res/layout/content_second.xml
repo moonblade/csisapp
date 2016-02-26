@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="ieeesbcet.com.ieeecss.SecondActivity"
+    tools:showIn="@layout/activity_second">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="asgbiuga"
+        android:textSize="25dp"
+        android:textAllCaps="true"
+        android:id="@+id/Name"
+        android:layout_above="@+id/Due"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="63dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="654658"
+        android:id="@+id/Due"
+        android:layout_above="@+id/radiogp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="43dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAVE"
+        android:id="@+id/save"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="65dp" />
+
+    <RadioGroup
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/radiogp"
+        android:buttonTint="@color/colorPrimaryDark"
+        android:layout_marginBottom="59dp"
+        android:layout_above="@+id/save"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="57dp"
+        android:layout_marginStart="57dp">
+
+        <RadioButton android:id="@+id/embedded"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Embedded System"
+            android:onClick="onRadioButtonClicked"/>
+
+        <RadioButton android:id="@+id/python"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Python and Data Analysis"
+            android:onClick="onRadioButtonClicked"/>
+
+        <RadioButton android:id="@+id/web"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Web Development"
+            android:onClick="onRadioButtonClicked"/>
+
+
+    </RadioGroup>
+
+
+
+
+</RelativeLayout>
