@@ -18,8 +18,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.math.BigInteger;
-import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -34,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
     public String urlip;
     JSONParser jsonParser = new JSONParser();
     JSONArrayParser jsonArrayParser = new JSONArrayParser();
-    String urldb = "http://192.168.1.3/csis/aura/downsync.php";
-    String urlup = "http://192.168.1.3/csis/aura/upsync.php";
+    String urldb;
+    String urlup;
 
     String res;
     Attendance db;
@@ -46,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Button button= (Button) findViewById(R.id.button);
         SugarContext.init(this);
-        Attendance attendance = new Attendance("sddd");
+        Attendance attendance = new Attendance("as",123, 123, "asdf", "23434", "Male", 234, "23434", "2344", "afasjkldsf", "adfj", 4, 5, 6, 43, 5, 3454, "2016-01-01");
         try {
             attendance.save();
         }catch (ExceptionInInitializerError e){
@@ -67,11 +65,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        Button down = (Button) findViewById(R.id.downsync);
+        final Button down = (Button) findViewById(R.id.downsync);
         down.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                down.setEnabled(false);
                 new DownSync().execute();
 
 
@@ -84,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                down.setEnabled(true);
                 new UpSync().execute();
 
 
@@ -97,6 +97,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 urlip =  et.getText().toString();
+                urldb = "http://"+urlip+"/csis/aura/downsync.php";
+                urlup = "http://"+urlip+"/csis/aura/upsync.php";
+
                 Toast set = Toast.makeText(getApplicationContext(), "URL Set", Toast.LENGTH_SHORT);
                 set.show();
             }
@@ -112,7 +115,11 @@ public class MainActivity extends AppCompatActivity {
         protected String doInBackground(String... params) {
 
 
+            Attendance.deleteAll(Attendance.class);
 
+            List<Attendance> AttendenceList = Attendance.find(Attendance.class,null,null);
+
+            System.out.println("hgfhfgfghdffffffffffffffffffffffffffffffffffffffffffffffff" + AttendenceList.size());
 
             List<NameValuePair> param = new ArrayList<NameValuePair>();
             //            params.add(new BasicNameValuePair("name", name));
@@ -171,26 +178,38 @@ public class MainActivity extends AppCompatActivity {
                 for (int i = 0; i < dbArray.length(); i++) {
 //
 //                System.out.println(p.get(0) + "......" + p.get(1));
+
+
 //
                     JSONObject jsonobject = dbArray.getJSONObject(i);
                     String name = jsonobject.getString("Name");
                     String email = jsonobject.getString("Email");
-                    String phone = jsonobject.getString("Phone");
-                    String branch = jsonobject.getString("Branch");
-                    String memid = jsonobject.getString("MemId");
+                    String sex = jsonobject.getString("Sex");
+                    String memid = jsonobject.getString("Memid");
+                    String section = jsonobject.getString("Section");
+                    String college = jsonobject.getString("College");
                     String food = jsonobject.getString("Food");
-                    String attendance = jsonobject.getString("Attendance");
+
+                    int paid = Integer.parseInt(jsonobject.getString("Paid"));
+                    int tobepaid = Integer.parseInt(jsonobject.getString("To be paid"));
+                    int memtype = Integer.parseInt(jsonobject.getString("Memtype"));
+                    int acco1 = Integer.parseInt(jsonobject.getString("Acco1"));
+                    int acco2 = Integer.parseInt(jsonobject.getString("Acco2"));
+                    int acco3 = Integer.parseInt(jsonobject.getString("Acco3"));
+                    int due = Integer.parseInt(jsonobject.getString("Due"));
+                    int workshop = Integer.parseInt(jsonobject.getString("Workshop"));
+                    int attendance = Integer.parseInt(jsonobject.getString("Attendance"));
+
+                    String phone = jsonobject.getString("Phone");
                     String lastupdate = jsonobject.getString("LastUpdate");
 
-                    System.out.println(name + "..." + email+ "..." + phone+ "..." + branch+ "..." + memid+ "..." + food + "..." + attendance + "..." + lastupdate);
-
-                    BigInteger ph = new BigInteger(phone);
-                    int id = Integer.parseInt(memid);
-                    Date sqlDate = java.sql.Date.valueOf(lastupdate);
-                    int a = Integer.parseInt(attendance);
 
 
-                    db = new Attendance(name); //, email, ph, branch, id, food, a, sqlDate
+                    System.out.println(name + "..." + email+ "..."  + attendance + "..." + lastupdate);
+
+
+
+                    db = new Attendance(name, paid, tobepaid, email, phone, sex, memtype, memid, section, college, food, acco1, acco2,acco3, due, workshop, attendance, lastupdate);
                     Log.i("attendance", db.toString());
                     db.save();
 
@@ -202,6 +221,10 @@ public class MainActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
 
+            List<Attendance> AttendenceList = Attendance.find(Attendance.class,null,null);
+
+            System.out.println("hgfhfgfghdffffffffffffffffffffffffffffffffffffffffffffffff" + AttendenceList.size());
+
 
         }
 
@@ -212,7 +235,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected String doInBackground(String... params) {
 
-            List<NameValuePair> param = new ArrayList<NameValuePair>();
+            List<NameValuePair> par = new ArrayList<NameValuePair>();
 
             Calendar c = Calendar.getInstance();
             System.out.println("Current time =&gt; "+c.getTime());
@@ -222,16 +245,20 @@ public class MainActivity extends AppCompatActivity {
             System.out.println("DATE is " + formattedDate);
 
 
-            List<Attendance> AttendenceList = Attendance.find(Attendance.class, "LastUpdate = ?", formattedDate);
+            List<Attendance> AttendenceList = Attendance.find(Attendance.class, "lastupdate = ?", formattedDate);
 //            long numberOfEntries = Attendance.count(Attendance.class, "LastUpdate = ?", new String[]{formattedDate});
 
             for (int i=0;i<AttendenceList.size();i++){
 
+
                 Attendance a = AttendenceList.get(i);
-                String msg = a.MemId;
-                param.clear();
-                param.add(new BasicNameValuePair("msg", msg));
-                dbResponse = jsonParser.makeHttpRequest(urlup, "POST", param);
+                System.out.println(a.name + "..." + a.email+ "..."  + a.attendance + "..." + a.lastupdate);
+                String msg = a.email;
+                String workshop = a.wrkshp+"";
+                par.clear();
+                par.add(new BasicNameValuePair("msg", msg));
+                par.add(new BasicNameValuePair("workshop", workshop));
+                dbResponse = jsonParser.makeHttpRequest(urlup, "POST", par);
             }
 
 

@@ -15,6 +15,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import net.sourceforge.zbar.Config;
 import net.sourceforge.zbar.Image;
@@ -27,11 +28,10 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.Console;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
-import java.util.logging.Logger;
-import java.util.*;
 
 
 public class BarCode extends AppCompatActivity {
@@ -62,6 +62,12 @@ public class BarCode extends AppCompatActivity {
 
     private boolean barcodeScanned = false;
     private boolean previewing = true;
+
+    Calendar c = Calendar.getInstance();
+    SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+    String formattedDate = df.format(c.getTime());
+    // Now formattedDate have current date/time
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -163,22 +169,53 @@ public class BarCode extends AppCompatActivity {
                 mCamera.stopPreview();
 
                 SymbolSet syms = scanner.getResults();
+//                Log.i("bloo",);
+//                syms.toArray()
                 for (Symbol sym : syms) {
 
                     Log.i("<<<<<<Asset Code>>>>> ",
                             "<<<<Bar Code>>> " + sym.getData());
-                    String scanResult = sym.getData().trim();
+//                    String scanResult = sym.getData().trim();
+                    Log.d("blah","scan result is :::::::::: is ::::::::::::::::::" + sym.getData());
+
+                    //minesss
+
+//                    scanResult = scanResult.replace("\n", "");
+//                    String input = "abcabc pattern1foopattern2 abcdefg pattern1barpattern2 morestuff";
+//                    List<String> strings = Arrays.asList( scanResult.replaceAll("^.*?EMAIL:", "").split("TEL.*?(EMAIL:|$)"));//                    String yess = strings
+//                    System.out.println( scanResult);
+
+/*
+                    String e = scanResult.substring(scanResult.indexOf("EMAIL:") + 6, scanResult.indexOf("TEL")-1);
+                    System.out.println("url is ::::::::::::::::::" + e);
+
+
 
                     System.out.println("url is ::::::::::::::::::" + url_create_product);
 
                     showAlertDialog(scanResult);
+
+                    List<Attendance> candidate = Attendance.find(Attendance.class, "email = ?", e);
+
+                    Attendance c = candidate.get(0);
+                    String name = c.name;
+                    int due = c.due;
+
+                    Intent intent2 = new Intent(BarCode.this, SecondActivity.class);
+
+                    intent2.putExtra("name", name);
+                    intent2.putExtra("due", due);
+
+                    startActivity(intent2);
+
+        */
 
                   /*  Toast.makeText(BarcodeScanner.this, scanResult,
                             Toast.LENGTH_SHORT).show();*/
 
                     barcodeScanned = true;
 
-                    break;
+
                 }
             }
         }
@@ -197,6 +234,7 @@ public class BarCode extends AppCompatActivity {
         msg = message;
         System.out.println(msg);
 
+
         new AlertDialog.Builder(this)
                 .setTitle(getResources().getString(R.string.app_name))
                 .setCancelable(true)
@@ -204,12 +242,25 @@ public class BarCode extends AppCompatActivity {
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
 
-                        new CreateNewProduct().execute();
+//                        new CreateNewProduct().execute();
+
+                        List<Attendance> candidate = Attendance.find(Attendance.class, "email = ?", msg);
+
+                        Attendance c = candidate.get(0);
+                        if ((c.lastupdate).equals(formattedDate))
+                            Toast.makeText(BarCode.this, "Attendence Marked", Toast.LENGTH_SHORT).show();
+                        else {
+//                            c.attendance++;
+//                            c.lastupdate = formattedDate;
+//                            Toast.makeText(BarCode.this, "Attendence Already Marked", Toast.LENGTH_SHORT).show();
+//                            c.save();
+                        }
+
 
                     }
                 })
                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which){
+                    public void onClick(DialogInterface dialog, int which) {
                         dialog.cancel();
                     }
                 })
