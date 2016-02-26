@@ -2,46 +2,116 @@
 <items version="2" >
 
     <item
-        jar="/home/vinod/csisapp/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/jars/classes.jar"
+        jar="/home/moonblade/workspace/ieee/app/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/jars/classes.jar"
         jumboMode="false"
         revision="23.0.2"
         sha1="379471b2bd17d9737c050345c08e8c7d16589784">
-        <dex dex="/home/vinod/csisapp/app/build/intermediates/pre-dexed/debug/classes-1f1ad8ecbe1b4663889c7004f2694fac691bfdef.jar" />
+        <dex dex="/home/moonblade/workspace/ieee/app/app/build/intermediates/pre-dexed/debug/classes-816cf1bca3a6eeee3378980f3078de9e6923c6a3.jar" />
     </item>
     <item
-        jar="/home/vinod/csisapp/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/jars/classes.jar"
+        jar="/home/moonblade/workspace/ieee/app/app/build/intermediates/exploded-aar/com.github.satyan/sugar/1.4/jars/classes.jar"
         jumboMode="false"
         revision="23.0.2"
-        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
-        <dex dex="/home/vinod/csisapp/app/build/intermediates/pre-dexed/debug/classes-88f420b1fce42f7aafd7b95d8881dbd02080a0e1.jar" />
+        sha1="ac045b53684345f4ec8468477e8fc5034d0d2bfd">
+        <dex dex="/home/moonblade/workspace/ieee/app/app/build/intermediates/pre-dexed/debug/classes-679d0d0a6acbc29c1a9a14291740af9892fd2567.jar" />
     </item>
     <item
-        jar="/home/vinod/csisapp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars/classes.jar"
+        jar="/home/moonblade/.gradle/caches/modules-2/files-2.1/com.googlecode.ez-vcard/ez-vcard/0.9.9/743e127224b267814e4bf64aafc64f1861c9c343/ez-vcard-0.9.9.jar"
         jumboMode="false"
         revision="23.0.2"
-        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
-        <dex dex="/home/vinod/csisapp/app/build/intermediates/pre-dexed/debug/classes-0dee1b6ddd44d0b38b1c10e4e19572f071177f35.jar" />
+        sha1="743e127224b267814e4bf64aafc64f1861c9c343">
+        <dex dex="/home/moonblade/workspace/ieee/app/app/build/intermediates/pre-dexed/debug/ez-vcard-0.9.9-64afc0612677cd97a2bbe158f4687bfaab610d05.jar" />
     </item>
     <item
-        jar="/home/vinod/csisapp/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/classes.jar"
+        jar="/home/moonblade/.gradle/caches/modules-2/files-2.1/org.freemarker/freemarker/2.3.23/cd143cd8c02a9f838e3cb75a6dfe133750437f6d/freemarker-2.3.23.jar"
         jumboMode="false"
         revision="23.0.2"
-        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
-        <dex dex="/home/vinod/csisapp/app/build/intermediates/pre-dexed/debug/classes-5584625b237975681648ee7cc882f8e334733e25.jar" />
+        sha1="cd143cd8c02a9f838e3cb75a6dfe133750437f6d">
+        <dex dex="/home/moonblade/workspace/ieee/app/app/build/intermediates/pre-dexed/debug/freemarker-2.3.23-f4d2775d79383fa11078d9c69f7924848b77dbeb.jar" />
     </item>
     <item
-        jar="/home/vinod/csisapp/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/libs/internal_impl-23.1.1.jar"
+        jar="/home/moonblade/.gradle/caches/modules-2/files-2.1/org.jsoup/jsoup/1.8.3/65fd012581ded67bc20945d85c32b4598c3a9cf1/jsoup-1.8.3.jar"
         jumboMode="false"
         revision="23.0.2"
-        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
-        <dex dex="/home/vinod/csisapp/app/build/intermediates/pre-dexed/debug/internal_impl-23.1.1-db6c9894e9d54cf03b89614911e428449d60e28f.jar" />
+        sha1="65fd012581ded67bc20945d85c32b4598c3a9cf1">
+        <dex dex="/home/moonblade/workspace/ieee/app/app/build/intermediates/pre-dexed/debug/jsoup-1.8.3-c79368b8d1da1be6fab9d744506d796fb740ae37.jar" />
     </item>
     <item
-        jar="/home/vinod/android-sdk-linux/extras/android/m2repository/com/android/support/support-annotations/23.1.1/support-annotations-23.1.1.jar"
+        jar="/home/moonblade/.gradle/caches/modules-2/files-2.1/org.jbundle.util.osgi.wrapped/org.jbundle.util.osgi.wrapped.org.apache.http.client/4.1.2/98c86e42679fe7ac066f6c242e0d14f0bce0bb7c/org.jbundle.util.osgi.wrapped.org.apache.http.client-4.1.2.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="98c86e42679fe7ac066f6c242e0d14f0bce0bb7c">
+        <dex dex="/home/moonblade/workspace/ieee/app/app/build/intermediates/pre-dexed/debug/org.jbundle.util.osgi.wrapped.org.apache.http.client-4.1.2-6403190e1719f55a05ec50c1b902e8fa20c69dc8.jar" />
+    </item>
+    <item
+        jar="/home/moonblade/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.1/support-annotations-23.1.1.jar"
         jumboMode="false"
         revision="23.0.2"
         sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
-        <dex dex="/home/vinod/csisapp/app/build/intermediates/pre-dexed/debug/support-annotations-23.1.1-8a2d49022944c0b61222885bde3f5ceb172c2b86.jar" />
+        <dex dex="/home/moonblade/workspace/ieee/app/app/build/intermediates/pre-dexed/debug/support-annotations-23.1.1-3aae07199b164531bc9c8eeb1a922eeaa05d3b46.jar" />
+    </item>
+    <item
+        jar="/home/moonblade/workspace/ieee/app/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="/home/moonblade/workspace/ieee/app/app/build/intermediates/pre-dexed/debug/classes-6ee0277dac5a4b3a3aa3b6ed0d4709f9cc94c989.jar" />
+    </item>
+    <item
+        jar="/home/moonblade/workspace/ieee/app/app/build/intermediates/exploded-aar/me.dm7.barcodescanner/zbar/1.8.2/jars/libs/zbar.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="7bbdf7ba57a8a157c0cad51e455609c70887812e">
+        <dex dex="/home/moonblade/workspace/ieee/app/app/build/intermediates/pre-dexed/debug/zbar-872566c3456fdc786c15ecd9c0e3be320a9921bc.jar" />
+    </item>
+    <item
+        jar="/home/moonblade/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/18.0/cce0823396aa693798f8882e64213b1772032b09/guava-18.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="cce0823396aa693798f8882e64213b1772032b09">
+        <dex dex="/home/moonblade/workspace/ieee/app/app/build/intermediates/pre-dexed/debug/guava-18.0-9c0bec0a688590354be86fa58fc2b1f124392ad6.jar" />
+    </item>
+    <item
+        jar="/home/moonblade/workspace/ieee/app/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/libs/internal_impl-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="/home/moonblade/workspace/ieee/app/app/build/intermediates/pre-dexed/debug/internal_impl-23.1.1-455895dfe711198db8f8571b8e92289784b5f4cf.jar" />
+    </item>
+    <item
+        jar="/home/moonblade/workspace/ieee/app/app/build/intermediates/exploded-aar/me.dm7.barcodescanner/core/1.8.2/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="96c83d4de6289a3f674165f896ac992564a7138d">
+        <dex dex="/home/moonblade/workspace/ieee/app/app/build/intermediates/pre-dexed/debug/classes-df889611118a139b80e5e25a7fe1235795fb8790.jar" />
+    </item>
+    <item
+        jar="/home/moonblade/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.6.1/892d15011456ea3563319b27bdd612dbc89bb776/jackson-core-2.6.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="892d15011456ea3563319b27bdd612dbc89bb776">
+        <dex dex="/home/moonblade/workspace/ieee/app/app/build/intermediates/pre-dexed/debug/jackson-core-2.6.1-790074cd83bc9203827d5d8ccdeca0ae90ea7e1c.jar" />
+    </item>
+    <item
+        jar="/home/moonblade/workspace/ieee/app/app/build/intermediates/exploded-aar/me.dm7.barcodescanner/zbar/1.8.2/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="15f1c7a4c01dd95b6da8c5acfaf42d2075d1ae2a">
+        <dex dex="/home/moonblade/workspace/ieee/app/app/build/intermediates/pre-dexed/debug/classes-73d7e00eb84f42ce2bfb542bad52e5f8ac8ee978.jar" />
+    </item>
+    <item
+        jar="/home/moonblade/workspace/ieee/app/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
+        <dex dex="/home/moonblade/workspace/ieee/app/app/build/intermediates/pre-dexed/debug/classes-eb371b53f479f9097b7b35712102974f57c9c7d2.jar" />
+    </item>
+    <item
+        jar="/home/moonblade/workspace/ieee/app/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="/home/moonblade/workspace/ieee/app/app/build/intermediates/pre-dexed/debug/classes-a1b6099fbc83329bbc6e53655fe50b2a1897951e.jar" />
     </item>
 
 </items>

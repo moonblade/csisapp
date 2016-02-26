@@ -33,6 +33,10 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import ezvcard.Ezvcard;
+import ezvcard.VCard;
+import ezvcard.property.Email;
+
 
 public class BarCode extends AppCompatActivity {
 
@@ -146,6 +150,14 @@ public class BarCode extends AppCompatActivity {
         }
     }
 
+    private String getEmail(String vcardString)
+    {
+        VCard vCard = Ezvcard.parse(vcardString).first();
+        List<Email> emails = vCard.getEmails();
+        return emails.get(0).getValue();
+//        return emails.get(0).toString();
+    }
+
     private Runnable doAutoFocus = new Runnable() {
         public void run() {
             if (previewing)
@@ -176,7 +188,8 @@ public class BarCode extends AppCompatActivity {
                     Log.i("<<<<<<Asset Code>>>>> ",
                             "<<<<Bar Code>>> " + sym.getData());
 //                    String scanResult = sym.getData().trim();
-                    Log.d("blah","scan result is :::::::::: is ::::::::::::::::::" + sym.getData());
+                    Log.i("Email is ", getEmail(sym.getData().trim()));
+                    Log.d("blah", "scan result is :::::::::: is ::::::::::::::::::" + sym.getData());
 
                     //minesss
 
